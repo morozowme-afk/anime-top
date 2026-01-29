@@ -1,0 +1,50 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const characters = [
+        {
+            name: "Мику Накано",
+            anime: "Пять невест",
+            img: "https://static.wikia.nocookie.net/gotoubun/images/3/31/Nakano_Miku.png",
+            rank: 1
+        },
+        {
+            name: "Рем",
+            anime: "Re:Zero",
+            img: "https://static.wikia.nocookie.net/rezero/images/2/20/Rem.png",
+            rank: 2
+        },
+        {
+            name: "Хацуне Мику",
+            anime: "Vocaloid",
+            img: "https://static.vecteezy.com/system/resources/previews/010/007/441/original/hatsune-miku-anime-girl-png.png",
+            rank: 3
+        },
+        {
+            name: " Тацуми",
+            anime: "Akame ga Kill!",
+            img: "https://static.wikia.nocookie.net/akamegakill/images/8/8c/Tatsumi.png",
+            rank: 4
+        },
+        {
+            name: "Кушина Узумаки",
+            anime: "Наруто",
+            img: "https://static.wikia.nocookie.net/naruto/images/9/9a/Kushina.png",
+            rank: 5
+        },
+        // Добавь ещё персонажей по аналогии
+    ];
+
+    const container = document.getElementById("charactersContainer");
+
+    characters.forEach((char) => {
+        const card = document.createElement("div");
+        card.className = "character-card";
+
+        card.innerHTML = `
+            <img src="${char.img}" alt="${char.name}" class="character-img" />
+            <div class="character-name">${char.rank}. ${char.name}</div>
+            <div class="character-desc">${char.anime}</div>
+        `;
+
+        container.appendChild(card);
+    });
+});
