@@ -1,50 +1,87 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const characters = [
-        {
-            name: "Мику Накано",
-            anime: "Пять невест",
-            img: "https://static.wikia.nocookie.net/gotoubun/images/3/31/Nakano_Miku.png",
-            rank: 1
-        },
-        {
-            name: "Рем",
-            anime: "Re:Zero",
-            img: "https://static.wikia.nocookie.net/rezero/images/2/20/Rem.png",
-            rank: 2
-        },
-        {
-            name: "Хацуне Мику",
-            anime: "Vocaloid",
-            img: "https://static.vecteezy.com/system/resources/previews/010/007/441/original/hatsune-miku-anime-girl-png.png",
-            rank: 3
-        },
-        {
-            name: " Тацуми",
-            anime: "Akame ga Kill!",
-            img: "https://static.wikia.nocookie.net/akamegakill/images/8/8c/Tatsumi.png",
-            rank: 4
-        },
-        {
-            name: "Кушина Узумаки",
-            anime: "Наруто",
-            img: "https://static.wikia.nocookie.net/naruto/images/9/9a/Kushina.png",
-            rank: 5
-        },
-        // Добавь ещё персонажей по аналогии
-    ];
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    const container = document.getElementById("charactersContainer");
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+    color: #222;
+    text-align: center;
+}
 
-    characters.forEach((char) => {
-        const card = document.createElement("div");
-        card.className = "character-card";
+header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-        card.innerHTML = `
-            <img src="${char.img}" alt="${char.name}" class="character-img" />
-            <div class="character-name">${char.rank}. ${char.name}</div>
-            <div class="character-desc">${char.anime}</div>
-        `;
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
 
-        container.appendChild(card);
-    });
-});
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #ff69b4;
+}
+
+main {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.character-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.character-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.character-name {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.character-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.character-rating {
+    margin-top: 8px;
+    color: #ffb400;
+    font-size: 1rem;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 0.85rem;
+    color: #555;
+}
